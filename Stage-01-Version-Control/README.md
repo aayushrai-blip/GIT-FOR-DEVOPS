@@ -779,3 +779,72 @@ Topics include:
 * git log
 * git diff
 
+Practical Tasks
+Task 1 — Install Git and Verify
+# Ubuntu/Debian
+sudo apt update
+sudo apt install git
+
+# CentOS/RHEL
+sudo yum install git
+
+# Fedora
+sudo dnf install git
+
+# MacOS
+brew install git
+
+# Windows - Download from https://git-scm.com/download/win
+
+# Verify installation
+git --version
+Task 2 — Configure Git
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+git config --global init.defaultBranch main
+Task 3 — Check Configuration
+# View all configuration
+git config --list
+
+# View global configuration only
+git config --global --list
+
+# View specific configuration
+git config user.name
+git config user.email
+Task 4 — Setup Git Aliases (Productivity Boost)
+# Shorthand for common commands
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.cm 'commit -m'
+git config --global alias.st status
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -1 HEAD'
+git config --global alias.visual 'log --oneline --graph --all'
+git config --global alias.amend 'commit --amend --no-edit'
+
+# Now you can use:
+# git co main          (instead of git checkout main)
+# git st               (instead of git status)
+# git cm "message"     (instead of git commit -m "message")
+# git visual           (beautiful commit graph)
+Task 5 — Configure Default Editor
+# Set VS Code as default editor
+git config --global core.editor "code --wait"
+
+# OR Vim
+git config --global core.editor "vim"
+
+# OR Nano
+git config --global core.editor "nano"
+Task 6 — Setup Credential Helper
+# For Linux
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
+
+# For macOS
+git config --global credential.helper osxkeychain
+
+# For Windows
+git config --global credential.helper wincred
+
